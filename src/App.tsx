@@ -15,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="tanveer" element={<Tanveer />} />
           <Route path="maroof" element={<Maroof />} />
+          
           <Route path="*" element={<Notfound />} />
 
         </Routes>

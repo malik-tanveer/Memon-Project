@@ -116,7 +116,7 @@ const Navbar = () => {
     };
     return (
         <>
-            <div className="relative z-50">
+            <div className="relative z-100 pb-16 ">
                 {/* Modern Blur Overlay */}
                 <AnimatePresence>
                     {activeMenu && (
