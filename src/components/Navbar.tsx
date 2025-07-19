@@ -134,10 +134,10 @@ const Navbar = () => {
                 </AnimatePresence>
 
                 {/* Navbar */}
-                <nav className="fixed top-0 left-0 w-full bg-gray-950 shadow-lg px-6 py-4 z-50">
+                <nav className=" bg-opacity-50 fixed top-0 left-0 w-full bg-gray-950 shadow-lg px-6 py-4 z-50">
                     <div className="max-w-7xl mx-auto flex items-center justify-between relative">
                         {/* Logo */}
-                        <Link to="/" className="text-2xl font-extrabold text-teal-400">
+                        <Link to="/" className="text-3xl font-extrabold text-teal-400">
                             Datavis
                         </Link>
 
@@ -168,7 +168,7 @@ const Navbar = () => {
                                                 {Object.entries(items).map(([item, subItems]) => (
                                                     <li
                                                         key={item}
-                                                        className="relative group"
+                                                        className="relative group "
                                                         onMouseEnter={() => setActiveSubmenu(item)}
                                                     >
                                                         <Link
