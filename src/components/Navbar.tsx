@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -89,39 +89,44 @@ const menuItems = {
     "Data Engineering": [],
 
     "Data Analysis": [],
-  }
+  },
+  Explore: {
+    "Home": [],
+    "About": [],
+    "Help": []
+  },
 
 
 };
 
 const Navbar = () => {
-
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [isHovering, setIsHovering] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const hoverRef = useRef(false);
 
   const handleEnter = (key: string) => {
     setActiveMenu(key);
-    setIsHovering(true);
+    hoverRef.current = true;
   };
 
   const handleLeave = () => {
-    setIsHovering(false);
+    hoverRef.current = false;
     setTimeout(() => {
-      if (!isHovering) {
+      if (!hoverRef.current) {
         setActiveMenu(null);
         setActiveSubmenu(null);
       }
-    }, 200);
+    }, 150);
   };
+
   return (
     <>
-      <div className="relative z-100 pb-16 ">
-        {/* Modern Blur Overlay */}
+      <div className="relative z-[100] pb-16">
+        {/* Overlay */}
         <AnimatePresence>
           {activeMenu && (
             <motion.div
-              className="fixed inset-0 bg-black/70 backdrop-blur-md"
+              className="fixed inset-0 bg-black/70 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -134,7 +139,7 @@ const Navbar = () => {
         </AnimatePresence>
 
         {/* Navbar */}
-        <nav className=" bg-opacity-50 fixed top-0 left-0 w-full bg-gray-950 shadow-lg px-6 py-4 z-50">
+        <nav className="fixed top-0 left-0 w-full bg-gray-950 px-6 py-4 z-50 shadow-md">
           <div className="max-w-7xl mx-auto flex items-center justify-between relative">
             {/* Logo */}
             <Link to="/" className="text-3xl font-extrabold text-teal-400">
@@ -142,7 +147,7 @@ const Navbar = () => {
             </Link>
 
             {/* Center Menu */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 flex gap-10 text-white">
+            <div className="absolute left-1/2 -translate-x-1/2 flex gap-10 text-white">
               {Object.entries(menuItems).map(([key, items]) => (
                 <div
                   key={key}
@@ -161,14 +166,14 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      onMouseEnter={() => setIsHovering(true)}
+                      onMouseEnter={() => (hoverRef.current = true)}
                       onMouseLeave={handleLeave}
                     >
-                      <ul className="space-y-2 relative">
+                      <ul className="space-y-2">
                         {Object.entries(items).map(([item, subItems]) => (
                           <li
                             key={item}
-                            className="relative group "
+                            className="relative group"
                             onMouseEnter={() => setActiveSubmenu(item)}
                           >
                             <Link
@@ -179,27 +184,30 @@ const Navbar = () => {
                             </Link>
 
                             {/* Side Dropdown */}
-                            {subItems.length > 0 && activeSubmenu === item && (
-                              <motion.ul
-                                className="absolute top-0 left-full ml-2 bg-gray-900 border border-gray-700 shadow-lg rounded-md px-4 py-2 w-40"
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -10 }}
-                                onMouseEnter={() => setIsHovering(true)}
-                                onMouseLeave={handleLeave}
-                              >
-                                {subItems.map((sub) => (
-                                  <li key={sub}>
-                                    <Link
-                                      to={`/${sub.toLowerCase()}`}
-                                      className="block text-sm text-gray-300 hover:text-teal-400"
-                                    >
-                                      {sub}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </motion.ul>
-                            )}
+                            {subItems.length > 0 &&
+                              activeSubmenu === item && (
+                                <motion.ul
+                                  className="absolute top-0 left-full ml-2 bg-gray-900 border border-gray-700 shadow-lg rounded-md px-4 py-2 w-40"
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  exit={{ opacity: 0, x: -10 }}
+                                  onMouseEnter={() =>
+                                    (hoverRef.current = true)
+                                  }
+                                  onMouseLeave={handleLeave}
+                                >
+                                  {subItems.map((sub) => (
+                                    <li key={sub}>
+                                      <Link
+                                        to={`/${sub.toLowerCase()}`}
+                                        className="block text-sm text-gray-300 hover:text-teal-400"
+                                      >
+                                        {sub}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </motion.ul>
+                              )}
                           </li>
                         ))}
                       </ul>
@@ -212,7 +220,7 @@ const Navbar = () => {
         </nav>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

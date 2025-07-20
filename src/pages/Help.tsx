@@ -1,0 +1,8 @@
+const Help = () =>{
+    return(
+        <>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A reiciendis laudantium accusantium magni, minus doloremque ea fugit debitis pariatur velit asperiores odio, iusto provident aspernatur saepe quisquam atque tempore. Eveniet cumque velit, nisi enim laudantium at accusantium, eligendi sequi quidem consequatur nemo magni ipsam qui officia nostrum saepe fugit ex reprehenderit nobis error incidunt voluptatibus nesciunt facilis nulla? Rem ipsam cumque culpa enim veniam incidunt aspernatur quis? Ullam, dolore a debitis consectetur consequuntur officia quis rerum, at nostrum praesentium, neque accusantium? Recusandae adipisci eius iste quisquam ipsam blanditiis sint facilis facere porro maiores aliquid accusamus expedita, modi dicta distinctio quae magni repudiandae at molestias repellat? Dolorem repellat accusamus explicabo, rerum molestias ducimus corporis. Architecto eius blanditiis, cupiditate inventore iure doloremque maxime error esse sint dolore ab eligendi repellendus, corrupti, aspernatur est quas dolores fuga officia temporibus voluptates itaque optio quia eveniet? Enim nobis, corrupti obcaecati id, cupiditate eveniet accusamus dolorum maiores tenetur vitae perspiciatis qui, modi hic velit repellat harum earum autem quod? Alias tempora cum quod enim similique optio officia eum veniam voluptatem ullam impedit quisquam facere, vero, fugit, blanditiis quibusdam dolor necessitatibus minima vitae? Suscipit temporibus accusantium ex itaque qui beatae saepe officiis optio facere. Non consequuntur maiores, dolor, nemo autem quisquam voluptatibus placeat quam ipsum officia perspiciatis id eum!
+        </>
+    )
+}
+export default Help;
