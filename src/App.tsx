@@ -7,7 +7,7 @@ import Tanveer from "./pages/Tanveer";
 import Maroof from "./pages/Maroof";
 import About from "./pages/About";
 import Chatbot from "./pages/Chatbot";
-import Help from "./pages/Help";
+import Analysis from "./pages/Analysis";
 
 function App() {
   const location = useLocation();
@@ -21,11 +21,13 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="tanveer" element={<Tanveer />} />
         <Route path="maroof" element={<Maroof />} />
         <Route path="about" element={<About />} />
         <Route path="chatbot-ai" element={<Chatbot />} />
-        <Route path="help" element={<Help />} />
+        <Route path="data-analysis" element={<Analysis />} />
+        
         <Route path="*" element={<Notfound />} />
       </Routes>
 

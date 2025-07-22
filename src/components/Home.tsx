@@ -1,8 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-
-
+import { Link } from "react-router-dom";
 
 interface LearningCategory {
     title: string;
@@ -75,11 +74,6 @@ const Home = () => {
         { title: "Artificial Intelligence (AI)", icon: "fas fa-robot", color: "text-red-400", skills: ["Python", "TensorFlow", "PyTorch", "OpenCV", "NLP", "Speech Recognition", "Deep Learning", "Computer Vision", "LLMs", "Prompt Engineering"] },
         { title: "Data Engineering", icon: "fas fa-database", color: "text-green-400", skills: ["Python", "SQL", "Apache Spark", "Apache Kafka", "Airflow", "ETL Pipelines", "AWS", "GCP", "BigQuery", "Docker", "Data Warehousing"] },
         { title: "Data Analysis", icon: "fas fa-search-dollar", color: "text-indigo-400", skills: ["Python", "R", "Excel", "SQL", "Pandas", "Power BI", "Tableau", "Jupyter Notebook", "Descriptive Statistics", "Data Wrangling"] },
-        { title: "Data Visualization", icon: "fas fa-palette", color: "text-orange-400", skills: ["Tableau", "Power BI", "Matplotlib", "Seaborn", "Plotly", "D3.js", "Excel Charts", "Looker", "Dash", "ggplot2"] },
-        { title: "Data Cleaning", icon: "fas fa-broom", color: "text-cyan-400", skills: ["Python", "Pandas", "NumPy", "OpenRefine", "Data Imputation", "Handling Missing Values", "Outlier Detection", "Data Formatting"] },
-        { title: "Data Preprocessing", icon: "fas fa-cogs", color: "text-lime-400", skills: ["Python", "Scikit-learn", "StandardScaler", "LabelEncoder", "OneHotEncoder", "Feature Scaling", "Feature Selection", "Imputation"] },
-        { title: "Data Modeling", icon: "fas fa-project-diagram", color: "text-emerald-400", skills: ["ER Diagrams", "Normalization", "MongoDB Schema Design", "SQL Schema Design", "Data Types", "Primary/Foreign Keys", "NoSQL vs SQL"] },
-        { title: "Data Mining", icon: "fas fa-gem", color: "text-rose-400", skills: ["Python", "R", "Clustering", "Association Rules", "Pattern Recognition", "Decision Trees", "Weka", "Text Mining", "Web Scraping"] },
     ];
 
     // Helper function to get the description based on the title
@@ -91,11 +85,6 @@ const Home = () => {
             case "Artificial Intelligence (AI)": return "Explore cutting-edge AI concepts, from natural language processing to computer vision.";
             case "Data Engineering": return "Design, build, and maintain scalable data pipelines and infrastructures.";
             case "Data Analysis": return "Interpret and present data effectively to support critical business and research decisions.";
-            case "Data Visualization": return "Master the art of transforming raw numbers into compelling and intuitive visual stories.";
-            case "Data Cleaning": return "Learn techniques to meticulously prepare and refine raw data for accuracy and reliability.";
-            case "Data Preprocessing": return "Equip your data for optimal performance in machine learning models through advanced preparation.";
-            case "Data Modeling": return "Design efficient, scalable database schemas for both relational and non-relational data.";
-            case "Data Mining": return "Extract valuable patterns, insights, and knowledge from large datasets to drive strategic initiatives.";
             default: return "";
         }
     };
@@ -638,21 +627,20 @@ const Home = () => {
                                     <div data-aos="fade-up" className="bg-slate-700 p-8 rounded-xl text-center border border-slate-600 shadow-inner">
                                         <p className="text-white text-2xl font-bold mb-4">Ready to See Your Data?</p>
                                         <p className="text-slate-400 mb-6 text-lg">Drag & Drop your file here or click below to upload:</p>
-                                        <button
-                                            className="px-10 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xl rounded-full shadow-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-75"
+                                        <a
+                                            href="https://datatoolfordae.streamlit.app/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                         >
-                                            <i className="fas fa-upload mr-3"></i> Upload Your Data
-                                        </button>
+                                            <button
+                                                className="px-10 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xl rounded-full shadow-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-75"
+                                            >
+                                                <i className="fas fa-upload mr-3"></i> Upload Your Data
+                                            </button>
+                                        </a>
+
                                         <p className="text-slate-500 text-sm mt-6">Secure processing. Instant visualizations. Deep insights.</p>
                                     </div>
-
-                                    <a
-                                        data-aos="fade-up"
-                                        href="/tools/data-visualizer"
-                                        className="mt-10 text-blue-400 hover:text-blue-300 font-semibold text-lg transition duration-200 flex items-center justify-center"
-                                    >
-                                        Launch Data Visualizer &rarr;
-                                    </a>
                                 </div>
 
                                 {/* AI Chatbot Card */}
@@ -695,15 +683,6 @@ const Home = () => {
                                 </div>
                             </div>
 
-                            {/* Explore Button */}
-                            <div className="text-center mt-24" data-aos="zoom-in-up" data-aos-delay="200">
-                                <a
-                                    href="/tools"
-                                    className="px-14 py-6 bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white font-bold text-2xl rounded-full shadow-xl transition-all duration-300 transform hover:scale-105 hover:ring-4 ring-cyan-400 ring-opacity-60 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-opacity-75 tracking-wide"
-                                >
-                                    Explore All Our Powerful Tools
-                                </a>
-                            </div>
                         </div>
                     </section>
 
@@ -763,13 +742,15 @@ const Home = () => {
                                 <span className="bg-slate-600 px-4 py-2 rounded-full text-slate-200 text-sm">Build a bar chart using D3.js</span>
                             </div>
 
-                            <button
-                                className="px-8 sm:px-10 py-3 sm:py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg sm:text-xl rounded-lg shadow-md transition duration-300 transform hover:scale-105"
-                                data-aos="zoom-in"
-                                data-aos-delay="800"
-                            >
-                                <i className="fas fa-robot mr-3"></i> Launch Chatbot
-                            </button>
+                            <Link to="/chatbot-ai">
+                                <button
+                                    className="px-8 sm:px-10 py-3 sm:py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg sm:text-xl rounded-lg shadow-md transition duration-300 transform hover:scale-105"
+                                    data-aos="zoom-in"
+                                    data-aos-delay="800"
+                                >
+                                    <i className="fas fa-robot mr-3"></i> Launch Chatbot
+                                </button>
+                            </Link>
 
                             <p
                                 className="text-slate-500 text-sm mt-6"
@@ -780,14 +761,12 @@ const Home = () => {
                             </p>
                         </div>
 
-                        <a
-                            href="/tools/chatbot"
-                            className="mt-10 inline-block text-purple-400 hover:text-purple-300 font-semibold text-lg transition duration-200 text-center w-full sm:w-auto"
+                        <Link className="mt-10 inline-block text-purple-400 hover:text-purple-300 font-semibold text-lg transition duration-200 text-center w-full sm:w-auto"
                             data-aos="fade-up"
-                            data-aos-delay="1000"
-                        >
+                            data-aos-delay="1000" to="chatbot-ai">
                             Talk to the Bot &rarr;
-                        </a>
+
+                        </Link>
                     </section>
 
                     {/* Part 8 Face Authentication */}

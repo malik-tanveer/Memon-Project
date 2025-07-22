@@ -41,26 +41,6 @@ const menuItems = {
       "Tableau", "Power BI", "Matplotlib", "Seaborn",
       "Plotly", "D3.js", "Excel Charts", "Looker",
       "Dash", "ggplot2"
-    ],
-    "Data Cleaning": [
-      "Python", "Pandas", "NumPy", "OpenRefine",
-      "Data Imputation", "Handling Missing Values",
-      "Outlier Detection", "Data Formatting", "Regular Expressions"
-    ],
-    "Data Preprocessing": [
-      "Python", "Scikit-learn", "StandardScaler", "LabelEncoder",
-      "OneHotEncoder", "Missing Value Handling", "Feature Scaling",
-      "Feature Selection", "Imputation"
-    ],
-    "Data Modeling": [
-      "ER Diagrams", "Normalization", "MongoDB Schema Design",
-      "SQL Schema Design", "Data Types", "Primary/Foreign Keys",
-      "NoSQL vs SQL"
-    ],
-    "Data Mining": [
-      "Python", "R", "Clustering", "Association Rules",
-      "Pattern Recognition", "Decision Trees", "Apriori Algorithm",
-      "Weka", "Text Mining", "Web Scraping"
     ]
   },
   Projects: {
@@ -78,7 +58,6 @@ const menuItems = {
   Explore: {
     "Home": [],
     "About": [],
-    "Help": []
   },
 };
 
