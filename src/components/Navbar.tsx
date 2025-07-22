@@ -134,7 +134,10 @@ const Navbar = () => {
           <div className="max-w-7xl mx-auto flex items-center justify-between relative">
             {/* Logo */}
             <Link to="/" className="text-3xl font-extrabold text-teal-400" onClick={closeMobileMenu}>
-              Datavis
+              <h1 className="text-white text-xl sm:text-2xl font-bold tracking-wide hover:text-blue-400 transition-all duration-300">
+                CodePilot
+              </h1>
+              <p className="text-xs text-gray-400">Your AI Coding Companion</p>
             </Link>
 
             {/* Hamburger Icon for Mobile */}
