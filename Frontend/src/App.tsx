@@ -5,9 +5,9 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Notfound from "./pages/Notfound";
 import Tanveer from "./pages/Tanveer";
 import Maroof from "./pages/Maroof";
+import Analysis from "./pages/Analysis"
 import About from "./pages/About";
 import Chatbot from "./pages/Chatbot";
-import Analysis from "./pages/Analysis";
 
 function App() {
   const location = useLocation();

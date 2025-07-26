@@ -101,7 +101,7 @@ const Home = () => {
                         data-aos-duration="800"
                     >
                         <div
-                            className="absolute inset-0 opacity-40"
+                            className="absolute inset-0 opacity-90"
                             style={{
                                 backgroundImage:
                                     'url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kaW5nfGVufDB8fDB8fHww")',

@@ -18,7 +18,7 @@ const Footer = () => {
           <p className="text-sm leading-relaxed text-gray-400" data-aos="fade-up" data-aos-delay="100">
             Empower your journey through data — whether you're exploring AI, developing tools, or building beautiful visualizations. Our mission is to make data knowledge accessible and actionable.
           </p>
-          <div className="flex gap-4 mt-4" data-aos="fade-right" data-aos-delay="200">
+          <div className="flex gap-4 mt-4" data-aos="zoom-in" data-aos-delay="200">
             {[
               { href: "https://github.com", icon: <FaGithub /> },
               { href: "https://linkedin.com", icon: <FaLinkedin /> },
@@ -51,7 +51,7 @@ const Footer = () => {
               "AI",
               "Data Visualization"
             ].map((item, i) => (
-              <li key={i} data-aos="fade-right" data-aos-delay={100 * (i + 1)}>
+              <li key={i} data-aos="fade-left" data-aos-delay={100 * (i + 1)}>
                 <a href={`/learn/${item.toLowerCase().replace(/ /g, "-")}`} className="hover:text-yellow-500">
                   {item}
                 </a>
@@ -65,9 +65,9 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4 text-green-400">Projects</h3>
           <ul className="space-y-2 text-sm text-gray-300">
             {[
-              { text: "Tanveer's Projects", link: "/projects/tanveer" },
-              { text: "Maroof's Projects", link: "/projects/maroof" },
-              { text: "Web Projects", link: "/projects/web-development" },
+              // { text: "Tanveer's Projects", link: "/projects/tanveer" },
+              // { text: "Maroof's Projects", link: "/projects/maroof" },
+              { text: "Web Projects", link: "/tanveer" },
               { text: "AI/ML Projects", link: "/projects/ai-ml" }
             ].map((item, i) => (
               <li key={i} data-aos="fade-up" data-aos-delay={100 * (i + 1)}>
@@ -88,7 +88,7 @@ const Footer = () => {
               "Data Cleaning",
               "Data Analysis"
             ].map((tool, i) => (
-              <li key={i} data-aos="fade-right" data-aos-delay={100 * (i + 1)}>
+              <li key={i} data-aos="fade-left" data-aos-delay={100 * (i + 1)}>
                 <a href={`/tools/${tool.toLowerCase().replace(/ /g, "-")}`} className="hover:text-cyan-300">
                   {tool}
                 </a>
@@ -101,7 +101,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div
         className="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500"
-        data-aos="fade-up"
+        data-aos=""
       >
         Made with ❤️ by{" "}
         <span className="text-white font-medium" data-aos="zoom-in" data-aos-delay="200">Tanveer</span> &{" "}

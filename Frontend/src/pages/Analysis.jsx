@@ -5,7 +5,10 @@ const Analysis = () => {
     window.location.href = "https://datatoolfordae.streamlit.app/";
   }, []);
 
-  return; // kuch bhi render mat karo
+  return(
+    <>
+    </>
+  )
 };
 
 export default Analysis;

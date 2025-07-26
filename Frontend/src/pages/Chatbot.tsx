@@ -13,7 +13,7 @@ const Chatbot = () => {
 
   const handleVoiceInput = () => {
     const SpeechRecognition =
-      window.SpeechRecognition || (window as any).webkitSpeechRecognition;
+      window.SpeechRecognition || (window).webkitSpeechRecognition;
 
     if (!SpeechRecognition) {
       alert("Sorry, your browser does not support Speech Recognition.");
@@ -98,7 +98,7 @@ const Chatbot = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="relative min-h-screen py-12 flex flex-col bg-gray-950">
+      <div className="relative min-h-screen flex flex-col bg-gray-950">
         <div className="py-12 px-6 sm:px-12 md:px-32 lg:px-48 flex flex-col bg-gray-950">
 
           <div className="absolute top-6 left-6 z-20 cursor-pointer" onClick={() => navigate("/")}>
@@ -180,34 +180,39 @@ const Chatbot = () => {
           {/* Input Box */}
           <form
             onSubmit={handleSubmit}
-            className="flex gap-2 p-4 border-t border-gray-800 bg-gray-900/80 rounded-lg backdrop-blur"
+            className="flex flex-col sm:flex-row gap-2 p-4 border-t border-gray-800 bg-gray-900/80 rounded-lg backdrop-blur"
           >
             <input
               type="text"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Type a message or use voice..."
-              className="flex-1 px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full sm:flex-1 px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             {/* Mic Button */}
             <button
               type="button"
               onClick={handleVoiceInput}
-              className="px-3 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-md border border-gray-700"
+              className="w-full sm:w-auto px-3 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-md border border-gray-700"
               title="Click and speak"
             >
-              <Mic className="w-5 h-5" />
+              <Mic className="w-5 h-5 mx-auto" />
             </button>
 
             {/* Send Button */}
             <button
               type="submit"
-              className="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
+              className="w-full sm:w-auto px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
             >
               Send
             </button>
           </form>
+          <div className="text-center text-sm text-gray-500 py-2">
+            This AI chatbot can make mistakes. Always double-check important information.
+          </div>
+
+
         </div>
       </div>
 
